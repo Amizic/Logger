@@ -2,12 +2,12 @@
 A simple, cross-platform logging library for C++ with colored console output and file logging support
 
 # Features
-- `Colored console output (works on Windows, Linux, and macOS)`
-- `File logging with automatic directory creation`
-- `Thread-safe logging with configurable mutexes`
-- `Timestamped messages with millisecond precision`
-- `Flexible build options (static or shared library)`
-- `Cross-platform (Windows, Linux, macOS)`
+- Colored console output (works on Windows, Linux, and macOS)`
+- File logging with automatic directory creation
+- Thread-safe logging with configurable mutexes
+- Timestamped messages with millisecond precision
+- Flexible build options (static or shared library)
+- Cross-platform (Windows, Linux, macOS)
 
 # Prerequisites
 - CMake 3.10 or higher  
@@ -15,8 +15,8 @@ A simple, cross-platform logging library for C++ with colored console output and
 
 # API Reference
 ## Constructors
-Logger(const std::string& loggerName) - Creates logger with internal mutex  
-Logger(const std::string& loggerName, std::mutex& consoleMutex) - Uses external mutex  
+`Logger(const std::string& loggerName)` - Creates logger with internal mutex  
+`Logger(const std::string& loggerName std::mutex& consoleMutex)` - Uses external mutex  
 
 ## Logging Methods
 `logMessage(const std::string& message)` - Regular message (white)  
@@ -25,8 +25,8 @@ Logger(const std::string& loggerName, std::mutex& consoleMutex) - Uses external 
 `logError(const std::string& message)` - Error message (bright red)  
 
 ## File Logging
-enableFileLogging(const std::string& filePath) - Start logging to file  
-disableFileLogging() - Stop file logging  
+`enableFileLogging(const std::string& filePath)` - Start logging to file  
+`disableFileLogging()` - Stop file logging  
 
 # Platform Support
 
