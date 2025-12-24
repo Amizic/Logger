@@ -46,11 +46,9 @@ BUILD_STATIC_LIBS (default: ON) - Build as static library (.lib/.a)
 
 Examples for CMake:
 
-Build shared library only
-cmake .. -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=OFF
+For shared library build:
+cmake .. -DBUILD_AS_SHARED=ON
 
-Build static library only (default)
-cmake .. -DBUILD_SHARED_LIBS=OFF -DBUILD_STATIC_LIBS=ON
+For static (default) library build:
+cmake .. -DBUILD_AS_SHARED=OFF
 
-Build both
-cmake .. -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON
