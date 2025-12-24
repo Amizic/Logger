@@ -29,7 +29,7 @@
     typedef unsigned short WORD;
 #endif
 
-class Logger {
+class LOGGER_API Logger {
 public:
     // Constructor & Destructor
     Logger(const std::string& loggerName, std::mutex& consoleMutex);
@@ -72,4 +72,5 @@ private:
     // File logging
     std::ofstream logFile;
     std::mutex fileMutex;
+
 };
