@@ -2,12 +2,12 @@
 A simple, cross-platform logging library for C++ with colored console output and file logging support
 
 # Features
-1. Colored console output (works on Windows, Linux, and macOS)
-2. File logging with automatic directory creation
-3. Thread-safe logging with configurable mutexes
-4. Timestamped messages with millisecond precision
-5. Flexible build options (static or shared library)
-6. Cross-platform (Windows, Linux, macOS)
+- `Colored console output (works on Windows, Linux, and macOS)` -
+- `File logging with automatic directory creation` -
+- `Thread-safe logging with configurable mutexes` -
+- `Timestamped messages with millisecond precision` -
+- `Flexible build options (static or shared library)` -
+- `Cross-platform (Windows, Linux, macOS)` -
 
 # Prerequisites
 CMake 3.10 or higher  
