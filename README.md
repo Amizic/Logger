@@ -31,12 +31,12 @@ A simple, cross-platform logging library for C++ with colored console output and
 # Platform Support
 
 ## Windows
-Console colors using Windows API or ANSI escape codes (Windows 10+)  
-Output: Logger.dll (shared) or Logger.lib (static)  
+- Console colors using Windows API or ANSI escape codes (Windows 10+)  
+- Output: Logger.dll (shared) or Logger.lib (static)  
 
 ## Linux/macOS
-Console colors using ANSI escape codes  
-Output: libLogger.so (shared) or libLogger.a (static)  
+- Console colors using ANSI escape codes  
+- Output: libLogger.so (shared) or libLogger.a (static)  
 
 
 # Build Options
