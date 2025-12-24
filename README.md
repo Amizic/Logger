@@ -41,16 +41,16 @@ A simple, cross-platform logging library for C++ with colored console output and
 
 # Build Options
 CMake configuration options:  
-BUILD_SHARED_LIBS (default: OFF) - Build as shared library (.dll/.so)  
-BUILD_STATIC_LIBS (default: ON) - Build as static library (.lib/.a)  
+`BUILD_SHARED_LIBS (default: OFF)` - Build as shared library (.dll/.so)  
+`BUILD_STATIC_LIBS (default: ON)` - Build as static library (.lib/.a)  
 
 ## Examples for CMake:
 
 For shared library build:  
-cmake .. -DBUILD_AS_SHARED=ON  
+`cmake .. -DBUILD_AS_SHARED=ON  `
 
 For static (default) library build:  
-cmake .. -DBUILD_AS_SHARED=OFF  
+`cmake .. -DBUILD_AS_SHARED=OFF  `
 
 ## Windows Output Files:
 
