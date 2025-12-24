@@ -2,21 +2,21 @@
 A simple, cross-platform logging library for C++ with colored console output and file logging support
 
 # Features
-## Colored console output (works on Windows, Linux, and macOS)
-## File logging with automatic directory creation
-## Thread-safe logging with configurable mutexes
-## Timestamped messages with millisecond precision
-## Flexible build options (static or shared library)
-## Cross-platform (Windows, Linux, macOS)
+Colored console output (works on Windows, Linux, and macOS)
+File logging with automatic directory creation
+Thread-safe logging with configurable mutexes
+Timestamped messages with millisecond precision
+Flexible build options (static or shared library)
+Cross-platform (Windows, Linux, macOS)
 
 #Prerequisites
-## CMake 3.10 or higher
-## C++11 compatible compiler
+CMake 3.10 or higher
+C++11 compatible compiler
 
 # API Reference
-Constructors
-Logger(const std::string& loggerName) - Creates logger with internal mutex
-Logger(const std::string& loggerName, std::mutex& consoleMutex) - Uses external mutex
+##Constructors
+###Logger(const std::string& loggerName) - Creates logger with internal mutex
+###Logger(const std::string& loggerName, std::mutex& consoleMutex) - Uses external mutex
 
 # Logging Methods
 logMessage(const std::string& message) - Regular message (white)
