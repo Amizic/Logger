@@ -14,9 +14,9 @@ CMake 3.10 or higher
 C++11 compatible compiler
 
 # API Reference
-##Constructors
-###Logger(const std::string& loggerName) - Creates logger with internal mutex
-###Logger(const std::string& loggerName, std::mutex& consoleMutex) - Uses external mutex
+## Constructors
+### Logger(const std::string& loggerName) - Creates logger with internal mutex
+### Logger(const std::string& loggerName, std::mutex& consoleMutex) - Uses external mutex
 
 # Logging Methods
 logMessage(const std::string& message) - Regular message (white)
