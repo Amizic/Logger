@@ -52,3 +52,22 @@ cmake .. -DBUILD_AS_SHARED=ON
 For static (default) library build:
 cmake .. -DBUILD_AS_SHARED=OFF
 
+## Windows Output Files:
+
+### Shared Library (DLL) Build:
+- `Logger.dll` - Runtime library (must be distributed with your app)
+- `Logger.lib` - Import library (needed during linking)
+
+### Static Library Build:
+- `Logger.lib` - Static library (contains all code, no DLL needed)
+
+## Usage:
+
+### For DLL users:
+1. Link with `Logger.lib` 
+2. Distribute `Logger.dll` with your .exe
+
+### For Static library users:
+1. Link with `Logger.lib`
+2. No DLL needed
+
