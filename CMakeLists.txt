@@ -1,31 +1,33 @@
 cmake_minimum_required(VERSION 3.10)
 project(Logger)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
-# Simple choice: SHARED or STATIC (not both)
-option(BUILD_AS_SHARED "Build as shared library (DLL/SO)" OFF)
+# Build both static and shared libraries
+add_library(Logger_static STATIC src/Logger/Logger.cpp)
+add_library(Logger_shared SHARED src/Logger/Logger.cpp)
 
-if(BUILD_AS_SHARED)
-    add_library(Logger SHARED src/Logger/Logger.cpp)
-    message(STATUS "Building SHARED library")
-    
+message(STATUS "Building both STATIC and SHARED libraries")
+
+# Set proper output names
+set_target_properties(Logger_static PROPERTIES OUTPUT_NAME Logger)
+set_target_properties(Logger_shared PROPERTIES OUTPUT_NAME Logger)
+
+# Apply common settings to both libraries
+foreach(target Logger_static Logger_shared)
+    target_include_directories(${target} PUBLIC include)
     if(WIN32)
-        target_compile_definitions(Logger PRIVATE LOGGER_EXPORTS)
+        target_link_libraries(${target} PRIVATE kernel32)
     endif()
-else()
-    add_library(Logger STATIC src/Logger/Logger.cpp)
-    message(STATUS "Building STATIC library")
-endif()
+endforeach()
 
-target_include_directories(Logger PUBLIC include)
-
+# Apply shared library specific settings
 if(WIN32)
-    target_link_libraries(Logger PRIVATE kernel32)
+    target_compile_definitions(Logger_shared PRIVATE LOGGER_EXPORTS)
 endif()
 
-# Simple installation
-install(TARGETS Logger
+# Install both libraries
+install(TARGETS Logger_static Logger_shared
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin

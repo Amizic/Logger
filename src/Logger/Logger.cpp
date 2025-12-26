@@ -1,6 +1,7 @@
-#include "include/Logger/Logger.hpp"
+#include "logger/Logger.hpp"
 #include <ctime>
 #include <filesystem>
+#include <unistd.h>
 
 // Platform-specific console initialization
 void Logger::initConsole() {
