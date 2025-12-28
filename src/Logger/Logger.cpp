@@ -1,7 +1,7 @@
 #include "include/Logger/Logger.hpp"
 #include <ctime>
 #include <filesystem>
-
+#include <unistd.h>
 // Platform-specific console initialization
 void Logger::initConsole() {
 #ifdef _WIN32
@@ -234,4 +234,5 @@ void Logger::logError(const std::string& message) {
     if (logFile.is_open()) {
         logFile.flush();
     }
+
 }
