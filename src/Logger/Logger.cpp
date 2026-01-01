@@ -1,4 +1,8 @@
+#ifdef __linux__
+#include "../include/logger/Logger.hpp"
+#else
 #include "include/Logger/Logger.hpp"
+#endif
 #include <ctime>
 #include <filesystem>
 #include <unistd.h>
