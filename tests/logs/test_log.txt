@@ -1,0 +1,18 @@
+=== Log Started: 2026-05-18 07:44:14.659 ===
+Logger: FileLogger
+===================================
+[2026-05-18 07:44:14.659] [FileLogger.....] [MESSAGE] This goes to file and console
+[2026-05-18 07:44:14.659] [FileLogger.....] [SUCCESS] Success logged
+[2026-05-18 07:44:14.659] [FileLogger.....] [WARNING] Warning logged
+[2026-05-18 07:44:14.659] [FileLogger.....] [ERROR..] Error logged
+=== Log Ended: 2026-05-18 07:44:14.659 ===
+
+=== Log Started: 2026-05-18 07:45:01.428 ===
+Logger: FileLogger
+===================================
+[2026-05-18 07:45:01.429] [FileLogger.....] [MESSAGE] This goes to file and console
+[2026-05-18 07:45:01.429] [FileLogger.....] [SUCCESS] Success logged
+[2026-05-18 07:45:01.429] [FileLogger.....] [WARNING] Warning logged
+[2026-05-18 07:45:01.429] [FileLogger.....] [ERROR..] Error logged
+=== Log Ended: 2026-05-18 07:45:01.429 ===
+

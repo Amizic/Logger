@@ -32,8 +32,8 @@ A simple, cross-platform logging library for C++ with coloured console output an
 ### Windows
 - Console colours via the Windows Console API (for all terminals) or ANSI codes (Windows 10+).
 - Builds produce:
-  - **DLL**: `logger.dll` + import library (`logger.lib` for MSVC, `liblogger.dll.a` for MinGW)
-  - **Static**: `logger.lib` (MSVC) or `liblogger.a` (MinGW)
+  - **DLL**: `liblogger.dll` + import library `liblogger.dll.a` (MinGW) / `logger.lib` (MSVC)
+  - **Static**: `liblogger.a` (MinGW) / `logger.lib` (MSVC)
 
 ### Linux / macOS
 - Console colours via ANSI escape codes.
@@ -42,18 +42,19 @@ A simple, cross-platform logging library for C++ with coloured console output an
   - **Static**: `liblogger.a`
 
 ## Building the Library
-The library consists of a single header (`Logger.hpp`) and source (`Logger.cpp`) pair.
-Compile directly from the command line — no CMake or IDE required.
+The project uses CMake for clean, cross-platform builds. Static and shared variants are controlled by a single option.
 
-### Windows (MinGW) static
-- `g++ -std=c++17 -I include -c src/Logger.cpp -DLOGGER_STATIC_DEFINE -o build/Logger.o && ar rcs build/liblogger.a build/Logger.o`
+### Static build (default)
+```bash
+- `cmake -B build_static -G "MinGW Makefiles"`
+- `cmake --build build_static`
 
-### Windows (MinGW) shared
-- `g++ -std=c++17 -I include -c src/Logger.cpp -DLOGGER_EXPORTS -o build/Logger.o && g++ -shared -o build/logger.dll build/Logger.o -Wl,--out-implib,build/liblogger.dll.a`
+### Dynamic build (default)
+- `cmake -B build_shared -G "MinGW Makefiles" -DBUILD_SHARED_LIBS=ON`
+- `cmake --build build_shared`
 
+### Static Test build
+- `g++ -std=c++17 tests/test_logger.cpp -Iinclude -Lbuild_static -llogger -o tests/test_logger_static.exe`
 
-
-
-
-
-
+### Dynamic Test build
+- `g++ -std=c++17 tests/test_logger.cpp -Iinclude -DLOGGER_DYNAMIC -Lbuild_shared -llogger -o tests/test_logger_dynamic.exe`
