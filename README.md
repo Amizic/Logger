@@ -45,7 +45,6 @@ A simple, cross-platform logging library for C++ with coloured console output an
 The project uses CMake for clean, cross-platform builds. Static and shared variants are controlled by a single option.
 
 ### Static build (default)
-```bash
 - `cmake -B build_static -G "MinGW Makefiles"`
 - `cmake --build build_static`
 
