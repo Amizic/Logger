@@ -46,10 +46,10 @@ The library consists of a single header (`Logger.hpp`) and source (`Logger.cpp`)
 Compile directly from the command line — no CMake or IDE required.
 
 ### Windows (MinGW) static
-- `g++ -std=c++17 -I include -c src/Logger/Logger.cpp -DLOGGER_STATIC_DEFINE -o build/Logger.o && ar rcs build/liblogger.a build/Logger.o`
+- `g++ -std=c++17 -I include -c src/Logger.cpp -DLOGGER_STATIC_DEFINE -o build/Logger.o && ar rcs build/liblogger.a build/Logger.o`
 
 ### Windows (MinGW) shared
-- `g++ -std=c++17 -I include -c src/Logger/Logger.cpp -DLOGGER_EXPORTS -o build/Logger.o && g++ -shared -o build/logger.dll build/Logger.o -Wl,--out-implib,build/liblogger.dll.a`
+- `g++ -std=c++17 -I include -c src/Logger.cpp -DLOGGER_EXPORTS -o build/Logger.o && g++ -shared -o build/logger.dll build/Logger.o -Wl,--out-implib,build/liblogger.dll.a`
 
 
 
