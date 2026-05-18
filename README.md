@@ -15,8 +15,8 @@ A simple, cross-platform logging library for C++ with coloured console output an
 
 ## API Reference
 ### Constructors
-- `Logger(const std::string& loggerName)` — Creates logger with an internal mutex.
-- `Logger(const std::string& loggerName, std::mutex& consoleMutex)` — Uses an externally provided mutex.
+- `LoggerHandler(const std::string& loggerName)` — Creates logger with an internal mutex.
+- `LoggerHandler(const std::string& loggerName, std::mutex& consoleMutex)` — Uses an externally provided mutex.
 
 ### Logging Methods
 - `logMessage(const std::string& message)` — Regular message (white / default colour)
