@@ -46,28 +46,11 @@ The library consists of a single header (`Logger.hpp`) and source (`Logger.cpp`)
 Compile directly from the command line — no CMake or IDE required.
 
 ### Windows (MinGW) static
-- `g++ -std=c++17 -c Logger.cpp -DLOGGER_STATIC_DEFINE && ar rcs liblogger.a Logger.o`
+- `g++ -std=c++17 -I include -c src/Logger/Logger.cpp -DLOGGER_STATIC_DEFINE -o build/Logger.o && ar rcs build/liblogger.a build/Logger.o`
 
 ### Windows (MinGW) shared
-- `g++ -std=c++17 -c Logger.cpp -DLOGGER_EXPORTS && g++ -shared -o logger.dll Logger.o -Wl,--out-implib,liblogger.dll.a`
+- `g++ -std=c++17 -I include -c src/Logger/Logger.cpp -DLOGGER_EXPORTS -o build/Logger.o && g++ -shared -o build/logger.dll build/Logger.o -Wl,--out-implib,build/liblogger.dll.a`
 
-### Windows (MSVC) static
-- `cl /c /std:c++17 /DLOGGER_STATIC_DEFINE Logger.cpp && lib /out:logger.lib Logger.obj`
-
-### Windows (MSVC) shared
-- `cl /c /std:c++17 /DLOGGER_EXPORTS Logger.cpp && link /DLL /out:logger.dll Logger.obj`
-
-### Linux static
-- `g++ -std=c++17 -c Logger.cpp -DLOGGER_STATIC_DEFINE && ar rcs liblogger.a Logger.o`
-
-### Linux shared
-- `g++ -std=c++17 -fPIC -c Logger.cpp -DLOGGER_EXPORTS && g++ -shared -o liblogger.so Logger.o`
-
-### macOS static (same as Linux)
-- `g++ -std=c++17 -c Logger.cpp -DLOGGER_STATIC_DEFINE && ar rcs liblogger.a Logger.o`
-
-### macOS shared
-- `g++ -std=c++17 -fPIC -c Logger.cpp -DLOGGER_EXPORTS && g++ -shared -o liblogger.dylib Logger.o`
 
 
 
