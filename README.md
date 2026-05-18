@@ -48,7 +48,7 @@ The project uses CMake for clean, cross-platform builds. Static and shared varia
 - `cmake -B build_static -G "MinGW Makefiles"`
 - `cmake --build build_static`
 
-### Dynamic build (default)
+### Dynamic build
 - `cmake -B build_shared -G "MinGW Makefiles" -DBUILD_SHARED_LIBS=ON`
 - `cmake --build build_shared`
 
