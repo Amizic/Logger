@@ -1,4 +1,4 @@
-#include "Logger.hpp"
+#include "LoggerHandler.hpp"
 #include <iostream>
 #include <thread>
 #include <vector>
@@ -7,7 +7,7 @@
 int main() {
     // Test 1: Basic console logging (internal mutex)
     {
-        Logger log("TestLogger");
+        LoggerHandler log("TestLogger");
         log.logMessage("Starting test");
         log.logSuccess("All good");
         log.logWarning("Something might be off");
@@ -18,7 +18,7 @@ int main() {
 
     // Test 2: File logging
     {
-        Logger log("FileLogger");
+        LoggerHandler log("FileLogger");
         log.enableFileLogging("logs/test_log.txt");
 
         log.logMessage("This goes to file and console");
@@ -37,7 +37,7 @@ int main() {
 
     for (int i = 0; i < 5; ++i) {
         threads.emplace_back([&sharedMutex, i]() {
-            Logger log("Thread" + std::to_string(i), sharedMutex);
+            LoggerHandler log("Thread" + std::to_string(i), sharedMutex);
             log.logMessage("Hello from thread " + std::to_string(i));
             log.logSuccess("Thread success");
         });
