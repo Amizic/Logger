@@ -1,5 +1,14 @@
-# C++ Logger Library
+# Logger
 A simple, cross-platform logging library for C++ with coloured console output and file logging support.
+
+All classes live in the `Logger` namespace, and the header is `Logger.hpp`:
+
+```cpp
+#include "Logger.hpp"
+
+Logger::Logger log("ClientLib");
+log.logSuccess("Connected");
+```
 
 ## Features
 - Coloured console output (Windows, Linux, macOS)
@@ -15,8 +24,8 @@ A simple, cross-platform logging library for C++ with coloured console output an
 
 ## API Reference
 ### Constructors
-- `LoggerHandler(const std::string& loggerName)` — Creates logger with an internal mutex.
-- `LoggerHandler(const std::string& loggerName, std::mutex& consoleMutex)` — Uses an externally provided mutex.
+- `Logger(const std::string& loggerName)` — Creates logger with an internal mutex.
+- `Logger(const std::string& loggerName, std::mutex& consoleMutex)` — Uses an externally provided mutex.
 
 ### Logging Methods
 - `logMessage(const std::string& message)` — Regular message (white / default colour)
@@ -32,14 +41,14 @@ A simple, cross-platform logging library for C++ with coloured console output an
 ### Windows
 - Console colours via the Windows Console API (for all terminals) or ANSI codes (Windows 10+).
 - Builds produce:
-  - **DLL**: `liblogger.dll` + import library `liblogger.dll.a` (MinGW) / `logger.lib` (MSVC)
-  - **Static**: `liblogger.a` (MinGW) / `logger.lib` (MSVC)
+  - **DLL**: `libLogger.dll` + import library `libLogger.dll.a` (MinGW) / `Logger.lib` (MSVC)
+  - **Static**: `libLogger.a` (MinGW) / `Logger.lib` (MSVC)
 
 ### Linux / macOS
 - Console colours via ANSI escape codes.
 - Builds produce:
-  - **Shared**: `liblogger.so` (Linux) / `liblogger.dylib` (macOS)
-  - **Static**: `liblogger.a`
+  - **Shared**: `libLogger.so` (Linux) / `libLogger.dylib` (macOS)
+  - **Static**: `libLogger.a`
 
 ## Building the Library
 The project uses CMake for clean, cross-platform builds.
@@ -53,7 +62,7 @@ The project uses CMake for clean, cross-platform builds.
 - `cmake --build build_shared`
 
 ### Static Test build
-- `g++ -std=c++17 tests/test_logger.cpp -Iinclude -Lbuild_static -llogger -o tests/test_logger_static.exe`
+- `g++ -std=c++17 tests/test_logger.cpp -Iinclude -Lbuild_static -lLogger -o tests/test_logger_static.exe`
 
 ### Dynamic Test build
-- `g++ -std=c++17 tests/test_logger.cpp -Iinclude -DLOGGER_DYNAMIC -Lbuild_shared -llogger -o tests/test_logger_dynamic.exe`
+- `g++ -std=c++17 tests/test_logger.cpp -Iinclude -DLOGGER_DYNAMIC -Lbuild_shared -lLogger -o tests/test_logger_dynamic.exe`
