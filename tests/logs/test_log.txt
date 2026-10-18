@@ -52,3 +52,12 @@ Logger: FileLogger
 [2026-10-04 21:01:40.427] [FileLogger.....] [ERROR..] Error logged
 === Log Ended: 2026-10-04 21:01:40.427 ===
 
+=== Log Started: 2026-10-05 23:13:30.173 ===
+Logger: FileLogger
+===================================
+[2026-10-05 23:13:30.173] [FileLogger.....] [MESSAGE] This goes to file and console
+[2026-10-05 23:13:30.173] [FileLogger.....] [SUCCESS] Success logged
+[2026-10-05 23:13:30.173] [FileLogger.....] [WARNING] Warning logged
+[2026-10-05 23:13:30.174] [FileLogger.....] [ERROR..] Error logged
+=== Log Ended: 2026-10-05 23:13:30.174 ===
+
